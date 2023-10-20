@@ -40,7 +40,7 @@ int get_opc(stack_t **stack, char *arg, char *val, int line_number)
 				else
 					return (1);
 			}
-			op[i](stack, (unsigned int) line_number);
+			op[i].f(stack, (unsigned int)line_number);
 			break;
 		}
 		i++;

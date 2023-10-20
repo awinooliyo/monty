@@ -16,7 +16,7 @@ stack_t *createNode(int n)
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		exir(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	new->n = n;
 	new->next = NULL;
@@ -52,7 +52,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 void pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t temp = NULL;
+	stack_t *temp = NULL;
 	(void)line_number;
 
 	temp = *stack;
@@ -79,7 +79,7 @@ void pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	else
-		fprintf(stdout, "%d\n", (*stack)->n)
+		fprintf(stdout, "%d\n", (*stack)->n);
 }
 
 /**
@@ -93,13 +93,13 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if (!*stack)
 	{
-		fprint(stderr, "L%u: can't pop an empty stack|n, line_number);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		_free(*stack);
-		exit(EXIT_FAILURE)
+		exit(EXIT_FAILURE);
 	}
 	else
 	{
-		temp = (*stock)->next;
+		temp = (*stack)->next;
 		free(*stack);
 		if (temp)
 			temp->prev = NULL;

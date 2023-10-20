@@ -14,6 +14,20 @@ void usage_error(void)
 }
 
 /**
+*open_error - prints an open file error message.
+*@file: file.
+* Return: FAILURE.
+*/
+
+void open_error(char *file)
+{
+	fprintf(stderr, "Error: Can't open file %s\n", file);
+
+	exit(EXIT_FAILURE);
+}
+
+
+/**
 * push_error - handles push error(s).
 * @fd: file descriptor.
 * @line: buffer.
@@ -40,7 +54,7 @@ void push_error(FILE *fd, char *line, stack_t *stack, int line_number)
 
 void instr_error(FILE *fd, char *line, stack_t *stack, char *val, int line_n)
 {
-	fprintf(stderr, "L%u: unknown instruction %s\n", val);
+	fprintf(stderr, "L%u: unknown instruction %s\n", line_n, val);
 	fclose(fd);
 	free(line);
 	_free(stack);

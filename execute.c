@@ -18,7 +18,7 @@ void execute(char *argv)
 	cmd.fd = fopen(argv, "r");
 	if (cmd.fd)
 	{
-		while (getline(&cmd.line, &buffersize, cmd.fd) != -1)
+		while (getline(&cmd.line, &bufsize, cmd.fd) != -1)
 		{
 			c_line++;
 			token = strtok(cmd.line, " \n\t\r");
@@ -34,7 +34,7 @@ void execute(char *argv)
 			if (r == 1)
 				push_error(cmd.fd, cmd.line, stack, c_line);
 			else if (r == -1)
-				instr_error(cmd.fd, cmd.line, stack, c_line);
+				instr_error(cmd.fd, cmd.line, stack,token, c_line);
 		}
 		free(cmd.line);
 		_free(stack);
