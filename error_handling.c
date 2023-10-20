@@ -39,6 +39,7 @@ void push_error(FILE *fd, char *line, stack_t *stack, int line_number)
 {
 	fprintf(stderr, "L%u usage: push integer\n", line_number);
 	fclose(fd);
+	free(line);
 	_free(stack);
 	exit(EXIT_FAILURE);
 }
