@@ -5,7 +5,7 @@
 * @stack: stack.
 */
 
-void_free(stack_t *stack)
+void _free(stack_t *stack)
 {
 	stack_t *list = NULL;
 
