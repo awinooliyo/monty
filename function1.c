@@ -79,7 +79,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		printf("%c\n", (*stack)->n);
 	else
 	{
-		fprintf(stder, "L%u: can't pchar, value out of range\n", line_number);
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 		_free(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -94,7 +94,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 void sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *val = NULL;
-	int num = 0;
+	int sum = 0;
 
 	if (!*stack || !(*stack)->next)
 	{
