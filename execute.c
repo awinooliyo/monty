@@ -34,7 +34,7 @@ void execute(char *argv)
 			if (r == 1)
 				push_error(cmd.fd, cmd.line, stack, c_line);
 			else if (r == -1)
-				instr_error(cmd.fd, cmd.line, stack,token, c_line);
+				instr_error(cmd.fd, cmd.line, stack, token, c_line);
 		}
 		free(cmd.line);
 		_free(stack);
