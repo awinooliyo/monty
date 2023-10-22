@@ -21,7 +21,7 @@ void nop(stack_t **stack, unsigned int line_number)
 void swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *val;
-	int temp = 0;
+	int tmp = 0;
 
 	val = *stack;
 	if (val == NULL || val->next == NULL)
@@ -32,9 +32,9 @@ void swap(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-	temp = val->n;
+	tmp = val->n;
 	val->n = val->next->n;
-	val->next->n = temp;
+	val->next->n = tmp;
 	}
 }
 
