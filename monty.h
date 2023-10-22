@@ -80,8 +80,8 @@ void _free(stack_t *stack);
 void clean_stack(stack_t **stack);
 void usage_error(void);
 void open_error(char *file);
-void push_error(FILE *fd, char *line, stack_t *stack, int line_number);
-void instr_error(FILE *fd, char *line, stack_t *stack, char *val, int line_number);
+void push_error(FILE *fd, char *line, stack_t *stack, int line_n);
+void instr_error(FILE *fd, char *line, stack_t *stack, char *line_n, int val);
 int _isdigit(char *c);
 stack_t *createNode(int n);
 
