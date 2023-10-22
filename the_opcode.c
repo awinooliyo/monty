@@ -6,7 +6,7 @@
 * @arg: command.
 * @val: value.
 * @line_number: line number.
-* Return: 0 on success or 1 if not digit and -1 on error.
+* Return: 0 on success or 1 if not digit or -1 on error.
 */
 
 int get_opc(stack_t **stack, char *arg, char *val, int line_number)
