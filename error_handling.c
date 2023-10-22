@@ -35,9 +35,9 @@ void open_error(char *file)
 * @line_number: line number of the command.
 */
 
-void push_error(FILE *fd, char *line, stack_t *stack, int line_n)
+void push_error(FILE *fd, char *line, stack_t *stack, int line_number)
 {
-	fprintf(stderr, "L%u: usage: push integer\n", line_n);
+	fprintf(stderr, "L%u: usage: push integer\n", line_number);
 	fclose(fd);
 	free(line);
 	_free(stack);
@@ -53,9 +53,9 @@ void push_error(FILE *fd, char *line, stack_t *stack, int line_n)
 * @val: instruction.
 */
 
-void instr_error(FILE *fd, char *line, stack_t *stack, char *line_n, int val)
+void instr_error(FILE *fd, char *line, stack_t *stack, char *val, int line_n)
 {
-	fprintf(stderr, "L%u: unknown instruction %s\n", val, line_n);
+	fprintf(stderr, "L%u: unknown instruction %s\n", line_n, val);
 	fclose(fd);
 	free(line);
 	_free(stack);
